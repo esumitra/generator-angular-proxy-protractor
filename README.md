@@ -1,4 +1,14 @@
-# generator-angular-proxy-protractor [![Build Status](https://secure.travis-ci.org/esumitra/generator-angular-proxy-protractor.png?branch=master)](https://travis-ci.org/esumitra/generator-angular-proxy-protractor)
+# Angular JS + Grunt connect-proxy + Grunt protractor-runner [![Build Status](https://secure.travis-ci.org/esumitra/generator-angular-proxy-protractor.png?branch=master)](https://travis-ci.org/esumitra/generator-angular-proxy-protractor)
+Minimal Angular JS projet with the following features
+* Sample Angular Project
+* Bootstrap framework for responsive UI
+* Proxy for seamlessly switching between REST data sources *
+* Karma runner with Jasmine BDD unit tests
+* Protractor runner with Jasmine BDD end-to-end tests
+* JUnit unit test reports *
+* JUnit end-to-end test reports *
+* Minification of javascript, css and html files for production
+
 
 > [Yeoman](http://yeoman.io) generator
 
