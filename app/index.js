@@ -12,7 +12,7 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
 
         this.on('end', function () {
             if (!this.options['skip-install']) {
-                //this.installDependencies();
+                this.installDependencies();
             }
         });
     },
@@ -61,6 +61,8 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
         this.mkdir('app/partials');
         this.template('_package.json', 'package.json');
         this.template('_bower.json', 'bower.json');
+        this.copy('_.bowerrc', '.bowerrc');
+        this.copy('_Gruntfile.js', 'Gruntfile.js');
     },
     _generateTestFiles: function() {
 	
