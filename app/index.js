@@ -7,48 +7,64 @@ var chalk = require('chalk');
 
 
 var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
-  init: function () {
-    this.pkg = require('../package.json');
+    init: function () {
+        this.pkg = require('../package.json');
 
-    this.on('end', function () {
-      if (!this.options['skip-install']) {
-        this.installDependencies();
-      }
-    });
-  },
+        this.on('end', function () {
+            if (!this.options['skip-install']) {
+                //this.installDependencies();
+            }
+        });
+    },
 
-  askFor: function () {
-    var done = this.async();
+    askFor: function () {
+        var done = this.async();
 
-    // Have Yeoman greet the user.
-    this.log(yosay('Welcome to the marvelous AngularProxyProtractor generator!'));
+        // Have Yeoman greet the user.
+        this.log(yosay('Welcome to the Angular-Proxy-Protractor generator! This will generate a template angular app and grunt configuration in the current directory.'));
 
-    var prompts = [{
-      type: 'confirm',
-      name: 'someOption',
-      message: 'Would you like to enable this option?',
-      default: true
-    }];
+        var prompts = [{
+            type: 'confirm',
+            name: 'generate_continue',
+            message: 'Do you want to continue?',
+        default: true
+        },{
+            type: 'input',
+            name: 'app_name',
+            message: 'What is the name of your application?',
+        default: 'myapp'
+        }];
 
-    this.prompt(prompts, function (props) {
-      this.someOption = props.someOption;
+        this.prompt(prompts, function (props) {
+            this.generate_continue = props.generate_continue;
+	    this.promptprops = props;
+	    this.appname = props.app_name;
+            done();
+        }.bind(this));
+    },
 
-      done();
-    }.bind(this));
-  },
+    app: function () {
+	console.log('generating application ' + this.promptprops.app_name);
+	this._generateAppFiles();
+    },
 
-  app: function () {
-    this.mkdir('app');
-    this.mkdir('app/templates');
-
-    this.copy('_package.json', 'package.json');
-    this.copy('_bower.json', 'bower.json');
-  },
-
-  projectfiles: function () {
-    this.copy('editorconfig', '.editorconfig');
-    this.copy('jshintrc', '.jshintrc');
-  }
+    projectfiles: function () {
+        this.copy('editorconfig', '.editorconfig');
+        this.copy('jshintrc', '.jshintrc');
+    },
+    _generateAppFiles: function() {
+        this.mkdir('app');
+        this.mkdir('app/fonts');
+        this.mkdir('app/images');
+        this.mkdir('app/scripts');
+        this.mkdir('app/styles');	
+        this.mkdir('app/partials');
+        this.template('_package.json', 'package.json');
+        this.template('_bower.json', 'bower.json');
+    },
+    _generateTestFiles: function() {
+	
+    }
 });
 
 module.exports = AngularProxyProtractorGenerator;
