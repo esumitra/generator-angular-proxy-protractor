@@ -63,6 +63,12 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
         this.template('_bower.json', 'bower.json');
         this.copy('_.bowerrc', '.bowerrc');
         this.copy('_Gruntfile.js', 'Gruntfile.js');
+        this.template('_index.html', 'app/index.html');
+        this.copy('404.html', 'app/404.html');
+        this.copy('favicon.ico', 'app/favicon.ico');
+        this.copy('starter-template.css', 'app/styles/starter-template.css');
+        this.copy('favicon.ico', 'app/favicon.ico');
+        this.template('_app.js', 'app/scripts/app.js');
     },
     _generateTestFiles: function() {
 	
