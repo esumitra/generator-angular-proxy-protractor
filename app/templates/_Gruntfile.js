@@ -438,7 +438,7 @@ module.exports = function (grunt) {
         if (target === 'devdata') {
             return grunt.task.run([
                 'clean:server',
-                // 'bowerInstall',
+                'bowerInstall',
                 'concurrent:server',
                 'autoprefixer',
                 'configureProxies:devdata',
@@ -448,7 +448,7 @@ module.exports = function (grunt) {
 
         grunt.task.run([
             'clean:server',
-            // 'bowerInstall',
+            'bowerInstall',
             'concurrent:server',
             'autoprefixer',
             'configureProxies:server',

@@ -46,6 +46,7 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
     app: function () {
 	console.log('generating application ' + this.promptprops.app_name);
 	this._generateAppFiles();
+	this._generateTestFiles();
     },
 
     projectfiles: function () {
@@ -71,7 +72,14 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
         this.template('_app.js', 'app/scripts/app.js');
     },
     _generateTestFiles: function() {
-	
+	this.mkdir('test');
+        this.mkdir('test/unit');
+        this.mkdir('test/e2e');
+        this.mkdir('testreports');
+	this.template('_karma.conf.js', 'test/karma.conf.js');
+	this.template('_protractor-conf.js', 'test/protractor-conf.js');
+	this.template('_unitSpec.js', 'test/unit/unitSpec.js');
+	this.template('_e2eSpec.js', 'test/e2e/e2eSpec.js');
     }
 });
 
