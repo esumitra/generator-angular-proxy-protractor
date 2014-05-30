@@ -45,6 +45,9 @@
     "grunt-protractor-runner": "~0.2.4",
     "less": "^1.7.0"
   },
+  "scripts": {
+    "update-webdriver": "webdriver-manager update"
+  },
   "engines": {
     "node": ">=0.10.0"
   }

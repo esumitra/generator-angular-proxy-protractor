@@ -39,6 +39,7 @@ var AngularProxyProtractorGenerator = yeoman.generators.Base.extend({
             this.generate_continue = props.generate_continue;
 	    this.promptprops = props;
 	    this.appname = props.app_name;
+	    this.currentdir = process.cwd();
             done();
         }.bind(this));
     },

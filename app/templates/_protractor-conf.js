@@ -23,6 +23,6 @@ exports.config = {
     onPrepare: function() {
     	require('jasmine-reporters');
     	jasmine.getEnv().addReporter(new jasmine.ConsoleReporter());
-	jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter('<%= _.slugify(appname) %>/testreports/', true, true));
+	jasmine.getEnv().addReporter(new jasmine.JUnitXmlReporter('<%= _.slugify(currentdir) %>/testreports', true, true));
     }
 };
