@@ -4,22 +4,18 @@
     "description": "Yeoman generator for Angular JS + grunt connect-proxy + grunt protractor-runner",
     "keywords": [
         "yeoman-generator",
-        "angularjs",
-        "scaffold",
-        "framework",
-        "component",
-        "front-end",
-        "app",
-        "e2e",
-        "unit",
-        "test",
+        "angular",
+        "karma",
         "proxy",
         "protractor",
         "bootstrap"
     ],
     "license": "MIT",
     "main": "app/index.js",
-    "repository": "esumitra/generator-angular-proxy-protractor",
+    "repository": {
+      "type": "git",
+      "url": "git://github.com:esumitra/generator-angular-proxy-protractor.git"
+    },
     "author": {
         "name": "Edward Sumitra",
         "email": "",
@@ -31,9 +27,6 @@
     "scripts": {
         "test": "mocha"
     },
-    "files": [
-        "app"
-    ],
     "dependencies": {
         "yeoman-generator": "~0.16.0",
         "chalk": "~0.4.0",
