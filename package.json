@@ -1,6 +1,6 @@
 {
     "name": "generator-angular-proxy-protractor",
-    "version": "0.0.1",
+    "version": "0.0.2",
     "description": "Yeoman generator for Angular JS + grunt connect-proxy + grunt protractor-runner",
     "keywords": [
         "yeoman-generator",
